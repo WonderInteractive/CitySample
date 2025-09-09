@@ -12,13 +12,12 @@ public class CitySampleTarget : TargetRules
 
 		ExtraModuleNames.Add("CitySample");
 
-		// For LLM subtest type
-		GlobalDefinitions.Add("ALLOW_LOW_LEVEL_MEM_TRACKER_IN_TEST=1");
-		bTrackRHIResourceInfoForTest = true;
-
 		if (BuildEnvironment == TargetBuildEnvironment.Unique)
-		{
-			bUseLoggingInShipping = true;
+        {
+            // For LLM subtest type
+            GlobalDefinitions.Add("ALLOW_LOW_LEVEL_MEM_TRACKER_IN_TEST=1");
+            bTrackRHIResourceInfoForTest = true;
+            bUseLoggingInShipping = true;
 		}
 	}
 }
